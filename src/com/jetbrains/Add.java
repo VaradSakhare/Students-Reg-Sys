@@ -5,8 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-class Add extends JFrame
-{
+class Add extends JFrame {
     public void caller() {
         JPanel p1 = new JPanel();
         JPanel p2 = new JPanel();
@@ -24,9 +23,11 @@ class Add extends JFrame
         JLabel l7 = new JLabel("Address");
         JLabel l8 = new JLabel("Batch");
         JLabel l9 = new JLabel("PinCode");
-        JLabel l10 = new JLabel("Email");
-        JLabel l11 = new JLabel("password");
-        JLabel l12 = new JLabel("Re-pass");
+        JLabel l10 = new JLabel("Phone no");
+        JLabel l11 = new JLabel("gua.Phone");
+        JLabel l12 = new JLabel("Email");
+        JLabel l13 = new JLabel("Password");
+        JLabel l14 = new JLabel("Re-Password");
 
         String City[] = {"Select City", "Jalgaon", "Nashik", "Nagpure", "Aurangabad", "Pachora", "Pune", "Mumbai", "Chopada"};
         JComboBox c1 = new JComboBox(City);
@@ -43,8 +44,10 @@ class Add extends JFrame
         final JTextArea t5 = new JTextArea();
         final JTextField t6 = new JTextField();
         final JTextField t7 = new JTextField();
-        final JPasswordField t8 = new JPasswordField();
-        final JPasswordField t9 = new JPasswordField();
+        final JTextField t8 = new JTextField();
+        final JTextField t9 = new JTextField();
+        final JPasswordField t10 = new JPasswordField();
+        final JPasswordField t11 = new JPasswordField();
 
         l1.setBounds(180, 8, 190, 50);
         l1.setFont(new Font("BOLD", Font.ITALIC, 21));
@@ -61,17 +64,21 @@ class Add extends JFrame
         l7.setBounds(30, 320, 90, 20);
         t5.setBounds(100, 315, 110, 70);
         l8.setBounds(243, 65, 90, 20);
-        c2.setBounds(300, 65, 130, 20);
+        c2.setBounds(310, 65, 130, 20);
         l9.setBounds(245, 115, 120, 20);
-        t6.setBounds(300, 119, 140, 20);
+        t6.setBounds(310, 119, 140, 20);
         l10.setBounds(245, 165, 110, 20);
-        t7.setBounds(300, 163, 140, 20);
+        t7.setBounds(310, 163, 140, 20);
         l11.setBounds(245, 210, 110, 20);
-        t8.setBounds(300, 213, 140, 20);
+        t8.setBounds(310, 213, 140, 20);
         l12.setBounds(245, 267, 110, 20);
-        t9.setBounds(300, 267, 140, 20);
+        t9.setBounds(310, 267, 140, 20);
+        l13.setBounds(245,315,110,20);
+        t10.setBounds(310,315,140,20);
+        l14.setBounds(247,375,110,20);
+        t11.setBounds(310,375,140,20);
 
-        b1.setBounds(215, 430, 100, 20);
+        b1.setBounds(215, 460, 100, 20);
         //sc.setBounds(100,100,50,100);
 
         p1.add(l1);
@@ -97,6 +104,10 @@ class Add extends JFrame
         p1.add(t8);
         p1.add(l12);
         p1.add(t9);
+        p1.add(l13);
+        p1.add(t10);
+        p1.add(l14);
+        p1.add(t11);
         p1.add(b1);
 
         tf.add("Personal", p1);
@@ -132,3 +143,4 @@ class Add extends JFrame
             }
         });
     }
+}
