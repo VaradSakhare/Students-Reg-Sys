@@ -60,6 +60,14 @@ public class Main {
             }
         });
 
+        b2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String s1=t1.getText();
+                String s2=p1.getText();
+            }
+        });
+
         f1.setVisible(true);
         f1.setSize(500,500);
         f1.setResizable(false);
