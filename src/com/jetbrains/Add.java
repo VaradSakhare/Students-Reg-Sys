@@ -147,7 +147,7 @@ class Add extends JFrame {
                 String s7 = Pint6.getText();
                 String s8 = Phonet7.getText();
                 String s9 = guat8.getText();
-                String s10 = Emailt9.getText();
+                String s10= Emailt9.getText();
                   if (s3.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "First name is empty");
                 } else if (s4.isEmpty()) {
