@@ -11,7 +11,7 @@ public class Second {
 
     public void callf2() {
 
-        JFrame f2 = new JFrame("Second Frame");
+        final JFrame f2 = new JFrame("Second Frame");
         JButton b1=new JButton("ADD ");
         JButton b2=new JButton("Delete");
         JButton b3=new JButton("Modify");
@@ -30,6 +30,7 @@ public class Second {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Add t1 = new Add();
+                f2.setVisible(false);
                 t1.caller();
             }
         });
@@ -37,6 +38,7 @@ public class Second {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Delete t1 = new Delete();
+                f2.setVisible(false);
                 t1.calling();
             }
         });
@@ -44,6 +46,7 @@ public class Second {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Modify t1 = new Modify();
+                f2.setVisible(false);
                 t1.calls();
             }
         });
