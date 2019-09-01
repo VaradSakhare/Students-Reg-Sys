@@ -10,12 +10,13 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
+
         JFrame f1=new JFrame("My Frame");
-        JLabel l4 = new JLabel();
-        l4.setIcon(new ImageIcon("G:\\Student.jpg"));
         JLabel l1=new JLabel("Students Login");
         JLabel l2=new JLabel("Name");
         JLabel l3=new JLabel("Password");
+        JLabel l4 = new JLabel();
+        l4.setIcon(new ImageIcon("G:\\Student.jpg"));
 
         final JTextField t1=new JTextField();
         final JPasswordField p1=new JPasswordField();

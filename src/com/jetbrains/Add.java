@@ -1,21 +1,20 @@
 package com.jetbrains;
-
-import com.sun.xml.internal.fastinfoset.util.QualifiedNameArray;
-
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import static javafx.scene.input.KeyCode.G;
-
 class Add extends JFrame {
-    public void caller() {
+        String selectedImage="null";
+
+     public void caller() {
         JPanel p1 = new JPanel();
         p1.setLayout(null);
         JPanel p2 = new JPanel();
+        p2.setLayout(null);
         JPanel p3 = new JPanel();
         p3.setLayout(null);
+        final JButton b4 = new JButton("Choose Image");
         JTabbedPane tf = new JTabbedPane();
 
 
@@ -63,7 +62,31 @@ class Add extends JFrame {
         JLabel l14 = new JLabel("Re-Paswd");
         final JPasswordField repass_t11 = new JPasswordField();
 
-          // Start from  Course details  \\
+        // Other Details
+
+        JLabel l22 = new JLabel("Father Name");
+        JTextField t12 = new JTextField();
+
+        JLabel l23 = new JLabel("Occupution");
+        String fa_Occupution[] = {"Select Occuption","yes","no"};
+         JComboBox c10_Occuptions = new JComboBox(fa_Occupution);
+
+        JLabel l24 = new JLabel("Salaries");
+         String fa_Salaries[] = {"Select Salary","yes","no"};
+         JComboBox c11_Salaries = new JComboBox(fa_Salaries);
+
+        JLabel l25 = new JLabel("Mother Name");
+         JTextField t15 = new JTextField();
+
+        JLabel l26 = new JLabel("Occuption");
+         String ma_Occupution[] = {"Select Occuption","yes","no"};
+         JComboBox c12_Occuption = new JComboBox(ma_Occupution);
+
+        JLabel l27 = new JLabel("Salaries");
+         String ma_Salaries[] = {"Select Occuption","yes","no"};
+         JComboBox c13_Salary = new JComboBox(ma_Salaries);
+
+        // Start from  Course details  \\
 
         JLabel l15 = new JLabel("Current course of Admission Year");
         String Admission[] = {"Select Year", "2011", "2012", "2013", "2014","2015","2016","2017"
@@ -100,7 +123,7 @@ class Add extends JFrame {
                 "F.Y.J.C 11th"};
         JComboBox Qualifications_c9 = new JComboBox(Qualifications);
 
-        //Personal details
+         //Personal details
 
         JButton b1 = new JButton("Submit");
 
@@ -127,6 +150,7 @@ class Add extends JFrame {
         l8.setBounds(243, 65, 90, 20);
         Batch_c2.setBounds(310, 65, 130, 20);
 
+
         l9.setBounds(245, 115, 120, 20);
         Pin_t6.setBounds(310, 119, 140, 20);
 
@@ -147,7 +171,28 @@ class Add extends JFrame {
 
         b1.setBounds(215, 460, 100, 20);
 
-        //Course
+        b4.setBounds(480,110,150,150);
+
+        // Other Information Details
+         l22.setBounds(30, 50, 90, 50);
+         t12.setBounds(105, 65, 110, 20);
+
+         l23.setBounds(30, 100, 90, 50);
+         c10_Occuptions.setBounds(105, 115, 110, 20);
+
+         l24.setBounds(30, 160, 90, 30);
+         c11_Salaries.setBounds(105, 165, 110, 20);
+
+         l25.setBounds(245, 65, 90, 20);
+         t15.setBounds(322, 65, 130, 20);
+
+         l26.setBounds(245, 115, 120, 20);
+         c12_Occuption.setBounds(320, 119, 140, 20);
+
+         l27.setBounds(245, 165, 110, 20);
+         c13_Salary.setBounds(320, 163, 140, 20);
+
+         //Course
 
         l15.setBounds(30, 50, 100, 50);
         Admission_c3.setBounds(130, 65, 110, 20);
@@ -169,6 +214,7 @@ class Add extends JFrame {
 
         l21.setBounds(260, 165, 110, 20);
         Qualifications_c9.setBounds(360, 163, 140, 20);
+
 
         p1.add(l1);
         p1.add(l2);
@@ -198,6 +244,21 @@ class Add extends JFrame {
         p1.add(l14);
         p1.add(repass_t11);
         p1.add(b1);
+        p1.add(b4);
+
+        //Other Information
+         p2.add(l22);
+         p2.add(t12);
+         p2.add(l23);
+         p2.add(c10_Occuptions);
+         p2.add(l24);
+         p2.add(c11_Salaries);
+         p2.add(l25);
+         p2.add(t15);
+         p2.add(l26);
+         p2.add(c12_Occuption);
+         p2.add(l27);
+         p2.add(c13_Salary);
 
         //Course
 
@@ -224,6 +285,28 @@ class Add extends JFrame {
         setVisible(true);
         setSize(700, 600);
         setResizable(false);
+        b4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser j = new JFileChooser();
+                FileNameExtensionFilter restrict = new FileNameExtensionFilter("Only image file", "jpg,png,jpeg");
+                j.addChoosableFileFilter(restrict);
+                    // Open the save dialog
+                j.showSaveDialog(null);
+                //System.out.println(j.getSelectedFile().getAbsolutePath());
+                try
+                {
+                    b4.setIcon(  new ImageIcon((((new ImageIcon(j.getSelectedFile().getAbsolutePath())).getImage()).getScaledInstance(150, 150,  java.awt.Image.SCALE_SMOOTH))) );
+                    b4.setText("");
+                    selectedImage=j.getSelectedFile().getAbsolutePath();
+                }catch (Exception ea){
+                    JOptionPane.showMessageDialog(null, "Choose Proper Image File");
+                }
+                if(selectedImage.equals("null")){
+                    JOptionPane.showMessageDialog(null,"Image is Selected");
+                }
+            }
+        });
         b1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
